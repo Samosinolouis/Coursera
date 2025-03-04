@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #ff006e;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --border-radius: 12px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    padding: 20px;
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  li {
+    margin-top: 1rem;
+  }
+  
+  img {
+    border: 3px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+  }
+  
+  img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .label {
+    text-align: center;
+    font-family: 'Segoe UI', 'Gill Sans', sans-serif;
+    margin-top: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+  
+  .grid figure {
+    background-color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+  }
+  
+  .grid figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+  
+  @media screen and (min-width: 772px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .grid figure {
+      border-radius: var(--border-radius);
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .grid figure:nth-child(3n) {
+      grid-column: auto;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    body {
+      padding: 30px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    img, .grid figure {
+      transition: none;
+    }
+    
+    img:hover, .grid figure:hover {
+      transform: none;
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #121212;
+      --text-color: #e5e5e5;
+    }
+    
+    .grid figure {
+      background-color: #1e1e1e;
+      color: #e5e5e5;
+      border-color: var(--secondary-color);
+    }
+    
+    h1 {
+      color: var(--secondary-color);
+    }
+  }
+  
